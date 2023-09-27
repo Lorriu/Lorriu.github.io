@@ -12,7 +12,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="weather-app-wrap">
         <div class="weather-app">
+            <div class="overview">
         <h1>
             New York
         </h1>
@@ -24,10 +26,13 @@
                 Clear
             </li>
         </ul>
+        </div>
        <div class="row">
         <div class="col-6">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
-            12°C | °F
+            <div class="d-flex weather-temperature">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon">
+            <strong id="temperature">12</strong><span class="units">°C | <a href="#">°F</a></span>
+            </div>
         </div>
         <div class="col-6">
             <ul>
@@ -43,10 +48,11 @@
             </ul>
         </div>
        </div>
-       <small>
+    </div>
+    <small>
         <a href="https://github.com/Lorriu/SheCodesProject" target="_blank">Open-Source code</a> created by Lorraine Ugen
-       
-       </small>
+    
+    </small>
     </div>
     </div>
 </body>
