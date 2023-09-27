@@ -1,4 +1,36 @@
 h1{
-    text-align: center;
+
+    line-height: 28px;
+    display: block;
+    font-size: 24px;
+    font-weight: 100;
     color: aqua;
+    margin-bottom: 0;
 }
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0;
+}
+
+.weather-app{
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    color: rgb(135, 135, 135);
+    font-size: 16px;
+    font-weight: 100px;
+    line-height: 19px;
+}
+
