@@ -4,7 +4,6 @@
         "description": "Weather application",
         "authors": "Lorraine Ugen",
         "version": "1.0.0",
-        "main": "pathToMain",
         "repository": 
             { 
                 "type": "git", 
@@ -12,4 +11,4 @@
             }
     }
 
-    yarn start
+    
