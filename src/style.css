@@ -36,6 +36,7 @@ li{
     font-size: 16px;
     font-weight: 100px;
     line-height: 19px;
+    text-transform: capitalize;
 }
 
 .overview{
@@ -50,12 +51,12 @@ li{
 
 .weather-temperature strong{
     color: rgb(33, 33, 33);
-    font-size: 64px;
+    font-size: 70px;
     font-weight: 400;
+    position: relative;
+    top: -16px;
 }
 
 .units{
-    position: relative;
-    font-size: 16px;
-    top: -10;
+    font-size: 12px;
 }
