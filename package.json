@@ -8,7 +8,15 @@
             { 
                 "type": "git", 
                 "url": "https://github.com/Lorriu/SheCodesProject"
+            },
+        "services": [
+            {
+                "buildCommand" :"npm install && npm run build",
+                "startCommand" : "npm start"
             }
-    }
-
-    
+        ],
+        "scripts": {
+            "start": "yarn start",
+            "build" : "yarn"
+        }
+     }
