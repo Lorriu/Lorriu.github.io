@@ -1,3 +1,30 @@
+
+    function formatDate(timestamp){
+        let date = new Date(timestamp);
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        if (minutes < 10){
+        minutes = `0${minutes}`
+        }
+        if (hours < 10){
+        hours = `0${hours}`
+        }
+        let days = [
+            "Sunday", 
+            "Monday", 
+            "Tuesday", 
+            "Wednesday", 
+            "Thursday", 
+            "Friday", 
+            "Saturday"];
+        let day = days[date.getDay()];
+        return `${day} ${hours}:${minutes}` 
+        
+    }
+
+
+
+
 function displayTemperature(response){
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -6,6 +33,7 @@ function displayTemperature(response){
     let humidityElement = document.querySelector("#humidity")
     let feelElement = document.querySelector("#feel");
     let windElement = document.querySelector("#wind");
+    let dateElement = document.querySelector("#date");
     temperatureElement.textContent = Math.round(response.data.temperature.current);
     console.log(response.data.temperature.feels_like);
     cityElement.textContent = response.data.city;
@@ -13,6 +41,7 @@ function displayTemperature(response){
     humidityElement.textContent = Math.round(response.data.temperature.humidity);
     feelElement.textContent = Math.round(response.data.temperature.feels_like);
     windElement.textContent = Math.round(response.data.wind.speed);
+    dateElement.textContent = formatDate(response.data.time * 1000)
 
 }
 
