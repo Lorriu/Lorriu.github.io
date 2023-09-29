@@ -33,15 +33,15 @@ function displayTemperature(response){
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    let icon =  response.data.condition.icon;
-    temperatureElement.textContent = Math.round(response.data.temperature.current);
+    celsiusTemperature = response.data.temperature.current
+    temperatureElement.textContent = Math.round(celsiusTemperature);
     cityElement.textContent = response.data.city;
     descriptionElement.textContent = response.data.condition.description;
     humidityElement.textContent = Math.round(response.data.temperature.humidity);
     feelElement.textContent = Math.round(response.data.temperature.feels_like);
     windElement.textContent = Math.round(response.data.wind.speed);
     dateElement.textContent = formatDate(response.data.time * 1000)
-    iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`);
+    iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute ("alt", response.data.condition.description);
 }
 
@@ -60,8 +60,33 @@ function handleSubmit(event){
     search(cityInputElement.value)
 }
 
+function displayFahrenheit(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    // removing the properties that look like a link and adding it to the other
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemperature = (celsiusTemperature * 9)/ 5 + 32;
+    temperatureElement.textContent = Math.round(fahrenheitTemperature)
+}
 
+function displayCelsius(event){
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.textContent = Math.round(celsiusTemperature);
+}
 
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit)
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
+
+search("London");

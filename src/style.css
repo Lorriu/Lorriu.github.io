@@ -60,3 +60,13 @@ li{
 .units{
     font-size: 12px;
 }
+
+.weather-temperature .active{
+    color: rgb(33, 33, 33);
+    cursor: default;
+
+}
+
+.weather-temperature .active:hover {
+    text-decoration: none;
+}
