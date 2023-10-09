@@ -22,36 +22,49 @@ function formatDate(timestamp){
         
 }
 
+//the days are numbers so need to be formated to written
+function formatDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+    return days[day];
+}
+
 
 function displayForecast(response) {
-    //adding a console response so that i can see the data to know what to select
-    console.log(response.data.daily)
+    //connecting the daily array to the forecast
+    console.log(response.data);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
 
     //create a row here so it can be a grid
     let forecastHTML = `<div class="row">`;
 
-    let days = ["Thurs", "Fri", "Sat", "Sun"];
     //create a function to assign forecast for each day in above array
-    days.forEach(function(day){
+    forecast.forEach(function(forecastDay, index){
 
-    //this adds the data for forecast to the string
+    //Only want to display 6 extra days, so if statement
+    if (index < 6){    
+    //this adds the data for forecast to the string with interpolation
     forecastHTML = forecastHTML + `
                 <div class="col-2">
                     <div class="weather-forecast-date">
-                    ${day}
+                    ${formatDay(forecastDay.time)}
                     </div>
-                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" 
+                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" 
                         alt="" 
                         width="42">               
                     <div class="weather-forecast-temperatures">
                         <span class="weather-forecast-temperature-max">
-                        18°</span>
+                        ${Math.round(forecastDay.temperature.maximum)}°</span>
                         <span class="weather-forecast-temperature-min">
-                        12°</span>
+                         ${Math.round(forecastDay.temperature.minimum)}°</span>
                     </div>
                 </div>
             `;
+    }
         });
 
 // closing the row with the end div
