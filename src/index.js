@@ -75,16 +75,14 @@ forecastElement.innerHTML = forecastHTML
 
 // function to get the lat & lon, based on city, so can get API data for days of the week
 function getForecast(coordinates){
-    console.log(coordinates);
     let apiKey = "toa489c4b0297ba13abfd4fa2587c29d"
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`
-    console.log(apiUrl);
 
     axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response){
-    console.log(response.data);
+    
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
