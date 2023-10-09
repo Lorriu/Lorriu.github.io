@@ -22,7 +22,10 @@ function formatDate(timestamp){
         
 }
 
-function displayForecast() {
+
+function displayForecast(response) {
+    //adding a console response so that i can see the data to know what to select
+    console.log(response.data.daily)
     let forecastElement = document.querySelector("#forecast");
 
     //create a row here so it can be a grid
@@ -57,6 +60,16 @@ forecastElement.innerHTML = forecastHTML
 
 }
 
+// function to get the lat & lon, based on city, so can get API data for days of the week
+function getForecast(coordinates){
+    console.log(coordinates);
+    let apiKey = "toa489c4b0297ba13abfd4fa2587c29d"
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`
+    console.log(apiUrl);
+
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response){
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -67,6 +80,7 @@ function displayTemperature(response){
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
+    
     celsiusTemperature = response.data.temperature.current
     temperatureElement.textContent = Math.round(celsiusTemperature);
     cityElement.textContent = response.data.city;
@@ -77,6 +91,8 @@ function displayTemperature(response){
     dateElement.textContent = formatDate(response.data.time * 1000)
     iconElement.setAttribute ("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute ("alt", response.data.condition.description);
+
+    getForecast(response.data.coordinates);
 }
 
 function search(city){
@@ -112,7 +128,6 @@ function displayCelsius(event){
     temperatureElement.textContent = Math.round(celsiusTemperature);
 }
 
-displayForecast();
 
 let celsiusTemperature = null;
 
