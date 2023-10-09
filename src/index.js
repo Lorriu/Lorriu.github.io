@@ -22,6 +22,40 @@ function formatDate(timestamp){
         
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    //create a row here so it can be a grid
+    let forecastHTML = `<div class="row">`;
+
+    let days = ["Thurs", "Fri", "Sat", "Sun"];
+    //create a function to assign forecast for each day in above array
+    days.forEach(function(day){
+
+    //this adds the data for forecast to the string
+    forecastHTML = forecastHTML + `
+                <div class="col-2">
+                    <div class="weather-forecast-date">
+                    ${day}
+                    </div>
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" 
+                        alt="" 
+                        width="42">               
+                    <div class="weather-forecast-temperatures">
+                        <span class="weather-forecast-temperature-max">
+                        18°</span>
+                        <span class="weather-forecast-temperature-min">
+                        12°</span>
+                    </div>
+                </div>
+            `;
+        });
+
+// closing the row with the end div
+forecastHTML += `</div>`;
+forecastElement.innerHTML = forecastHTML
+
+}
 
 function displayTemperature(response){
     console.log(response.data);
@@ -78,6 +112,8 @@ function displayCelsius(event){
     temperatureElement.textContent = Math.round(celsiusTemperature);
 }
 
+displayForecast();
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -90,3 +126,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("London");
+
