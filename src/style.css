@@ -2,10 +2,11 @@ h1{
 
     line-height: 28px;
     display: block;
-    font-size: 24px;
-    font-weight: 100;
+    font-size: 40px;
+    font-weight: 200;
     color: #3498db;
     margin-bottom: 0;
+    padding: 10px;
 }
 
 body{
@@ -21,11 +22,11 @@ body{
 }
 
 .weather-app{
-    padding: 20px;
-    background-color: #fff;
+    padding: 30px;
+    background-color: #cddefa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #dadde1;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 ul{
@@ -37,9 +38,11 @@ li{
     list-style: none;
     color: #555;
     font-size: 16px;
-    font-weight: 300px;
+    font-weight: 500px;
     line-height: 19px;
     text-transform: capitalize;
+    padding: 5px 10px;
+    -webkit-text-stroke: 0.5px #555;
 }
 
 .overview{
@@ -83,7 +86,6 @@ li{
 
 .weather-forecast-date{
     font-size: 16px;
-    opacity: 0.5;
 }
 
 .weather-forecast-temperatures{
@@ -92,4 +94,21 @@ li{
 
 .weather-forecast-temperature-min{
     opacity: 0.5;
+}
+
+.col-2{
+    border: thin, solid, #2f8189;
+    background-color: #15064a ;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: #fff;
+    font-weight: 200;
+}
+
+.weather-forecast-date{
+    color: #fff;
 }
