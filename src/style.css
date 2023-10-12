@@ -36,13 +36,13 @@ ul{
 
 li{
     list-style: none;
-    color: #555;
+    color: #000;
     font-size: 16px;
     font-weight: 500px;
     line-height: 19px;
     text-transform: capitalize;
     padding: 5px 10px;
-    -webkit-text-stroke: 0.5px #555;
+    -webkit-text-stroke: 0.2px #000;
 }
 
 .overview{
