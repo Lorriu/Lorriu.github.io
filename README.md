@@ -60,4 +60,4 @@ To contribute to this project:
 
 ## License
 
-This project is not licenses and create for practice purposes only, this application should not be used for commercial purposes. 
+This project is not licensed and was created for practice purposes only, this application should not be used for commercial purposes. 
