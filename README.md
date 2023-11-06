@@ -1,5 +1,5 @@
 # SheCodesProject
- Description: Weather App, which includes API intergration to display live data for different cities. Code includes functions to display the current time and date. Simple CSS componates that compliment each other and a button
+ Weather App, which includes API intergration to display live data for different cities. Code includes functions to display the current time and date. Simple CSS componates that compliment each other and a button
 <img width="857" alt="Screenshot " src="https://github.com/Lorriu/Lorriu.github.io/assets/124742429/e6ac6822-38c9-49d1-89fd-f68061d24dba">
 
 ## Table of Contents
