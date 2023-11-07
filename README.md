@@ -13,11 +13,9 @@
 
 ## Demo
 
-Include a link to a live demo of your weather app if available.
-
+Live demo of your weather app is available<a href="https://lorriu.github.io/" target="_blank" >here</a>.
 ## Features
 
-List the key features of your weather app.
 - Search for weather data by city name.
 - Display temperature in both Celsius and Fahrenheit.
 - Fetch live weather data using a specified API.
