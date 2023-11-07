@@ -13,7 +13,7 @@
 
 ## Demo
 
-Live demo of your weather app is available <a href="https://lorriu.github.io/" target="_blank" >here</a>.
+Live demo of the weather app is available <a href="https://lorriu.github.io/" target="_blank" >here</a>.
 ## Features
 
 - Search for weather data by city name.
